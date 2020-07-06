@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title #{title}
+        link(rel="stylesheet", href="/css/style.css")
+    body
+        a(href="/") Daftar Mahasiswa | 
+        a(href="/tambah_mhs") Tambah Mahasiswa
+        hr
+        h1 Daftar Mahasiswa
+
+        table(style="width:50%", border="1")
+            tr
+                td No
+                td Nama Mahasiswa
+
+            if mhs.length > 0
+                - var i=0;
+                each mahasiswa in mhs
+                    tr
+                        td #{++i}
+                        td #{mahasiswa.nama}
+            else
